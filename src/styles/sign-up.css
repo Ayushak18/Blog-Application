@@ -1,0 +1,30 @@
+.signUp-form {
+  text-align: center;
+}
+
+.signUp-form h1 {
+  font-size: 32px;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+form {
+  margin: 50px 100px 100px 100px;
+}
+
+form input {
+  padding: 10px 20px;
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin: 10px 0;
+}
+
+form .submit-button {
+  width: 104%;
+  background: #5cb85c;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+/*# sourceMappingURL=sign-up.css.map */
