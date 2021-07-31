@@ -6,11 +6,19 @@
   p {
     font-size: 22px;
     margin: 0 10px;
+    cursor: pointer;
   }
   span {
+    color: #5cb85c;
+    background: white;
+    border: 1px solid #5cb85c;
+    padding: 10px;
+    margin: 0 3px;
+    cursor: pointer;
+  }
+  .activeCount {
     padding: 10px;
     background: #5cb85c;
     color: white;
-    margin: 0 3px;
   }
 }

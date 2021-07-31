@@ -11,18 +11,40 @@ class Home extends React.Component {
     articles: null,
     totalArticles: 0,
     articlesPerPage: 10,
+    activePage: 1,
   };
 
   componentDidMount() {
-    fetch(ARTICLES_URL + `/?limit=${this.state.articlesPerPage}`)
+    // fetch(ARTICLES_URL + `/?limit=${this.state.articlesPerPage}`)
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     this.setState({
+    //       articles: data.articles,
+    //       totalArticles: data.articlesCount,
+    //     });
+    //   });
+    this.fetchData();
+  }
+
+  fetchData = () => {
+    let limit = this.state.articlesPerPage;
+    let offSet = (this.state.activePage - 1) * limit;
+
+    fetch(ARTICLES_URL + `/?limit=${limit}&offset=${offSet}`)
       .then((res) => res.json())
       .then((data) => {
         this.setState({
+          articles: null,
           articles: data.articles,
           totalArticles: data.articlesCount,
         });
       });
-  }
+  };
+
+  updateCurrentActivePage = (index) => {
+    this.setState({ activePage: index }, this.fetchData);
+  };
+
   render() {
     return (
       <>
@@ -32,6 +54,8 @@ class Home extends React.Component {
         <Pagination
           totalArticles={this.state.totalArticles}
           articlesPerPage={this.state.articlesPerPage}
+          activePage={this.state.activePage}
+          updateCurrentActivePage={this.updateCurrentActivePage}
         />
       </>
     );
