@@ -11,6 +11,10 @@
   color: #5cb85c;
 }
 
+.signUp-form .sign-up-error-span {
+  color: red;
+}
+
 form {
   width: 50%;
   margin: 0 auto;

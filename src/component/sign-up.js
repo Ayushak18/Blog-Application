@@ -12,7 +12,25 @@ class SignUp extends React.Component {
   };
 
   handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+    let errors = { ...this.state.errors };
+    switch (event.target.name) {
+      case 'email':
+        let emailError = event.target.value.includes('@' && '.com')
+          ? ''
+          : 'Email is invalid';
+        errors.email = emailError;
+        break;
+      case 'password':
+        let passwordError =
+          event.target.value.length < 6
+            ? 'Password should be 6 character long'
+            : '';
+        errors.password = passwordError;
+    }
+    this.setState({
+      [event.target.name]: event.target.value,
+      errors,
+    });
   };
   render() {
     return (
@@ -27,13 +45,16 @@ class SignUp extends React.Component {
             placeholder="Email"
             name="email"
           />
-          <span>this is an error span</span>
+          <span className="sign-up-error-span">{this.state.errors.email}</span>
           <input
             onChange={this.handleChange}
             type="password"
             name="password"
             placeholder="Password"
           />
+          <span className="sign-up-error-span">
+            {this.state.errors.password}
+          </span>
           <input className="submit-button" type="submit" value="Sign Up" />
         </form>
       </div>
