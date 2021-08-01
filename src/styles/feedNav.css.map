@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACP,MAAM,EAAE,MAAM;CAaf;;AAdD,AAEE,QAFM,CAEN,CAAC,CAAC;EACA,UAAU,EAAE,sBAAsB;EAClC,MAAM,EAAE,IAAI;EACZ,SAAS,EAAE,IAAI;EACf,MAAM,EAAE,MAAM;EACd,MAAM,EAAE,OAAO;CAChB;;AARH,AAUE,QAVM,CAUN,eAAe,CAAC;EACd,KAAK,EAAE,OAAO;EACd,aAAa,EAAE,iBAAiB;CACjC",
+    "sources": [
+        "feedNav.scss"
+    ],
+    "names": [],
+    "file": "feedNav.css"
+}

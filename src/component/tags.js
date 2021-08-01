@@ -23,7 +23,14 @@ class Tags extends React.Component {
       return (
         <>
           {this.state.tags.map((tag, index) => {
-            return <button className="tag-button">{tag}</button>;
+            return (
+              <button
+                className="tag-button"
+                onClick={() => this.props.addTab(tag)}
+              >
+                {tag}
+              </button>
+            );
           })}
         </>
       );

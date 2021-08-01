@@ -5,6 +5,7 @@ import Tags from './tags';
 import Pagination from './pagination';
 import '../styles/home.css';
 import { ARTICLES_URL } from '../utils/constant';
+import FeedNav from './feedNav';
 
 class Home extends React.Component {
   state = {
@@ -12,6 +13,7 @@ class Home extends React.Component {
     totalArticles: 0,
     articlesPerPage: 10,
     activePage: 1,
+    activeTab: '',
   };
 
   componentDidMount() {
@@ -23,22 +25,53 @@ class Home extends React.Component {
     //       totalArticles: data.articlesCount,
     //     });
     //   });
-    this.fetchData();
+    this.fetchData(this.state.activeTab);
   }
 
-  fetchData = () => {
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.activeTab !== this.state.activeTab) {
+      console.log('Worked');
+      this.fetchData(this.state.activeTab);
+    }
+  }
+
+  removeTab = () => {
+    this.setState({
+      activeTab: '',
+    });
+  };
+
+  addTab = (value) => {
+    this.setState({
+      activeTab: value,
+    });
+  };
+
+  fetchData = (value) => {
     let limit = this.state.articlesPerPage;
     let offSet = (this.state.activePage - 1) * limit;
 
-    fetch(ARTICLES_URL + `/?limit=${limit}&offset=${offSet}`)
-      .then((res) => res.json())
-      .then((data) => {
-        this.setState({
-          articles: null,
-          articles: data.articles,
-          totalArticles: data.articlesCount,
+    if (!value) {
+      fetch(ARTICLES_URL + `/?limit=${limit}&offset=${offSet}`)
+        .then((res) => res.json())
+        .then((data) => {
+          this.setState({
+            articles: null,
+            articles: data.articles,
+            totalArticles: data.articlesCount,
+          });
         });
-      });
+    } else if (value) {
+      fetch(ARTICLES_URL + `/?limit=${limit}&offset=${offSet}&tag=${value}`)
+        .then((res) => res.json())
+        .then((data) => {
+          this.setState({
+            articles: null,
+            articles: data.articles,
+            totalArticles: data.articlesCount,
+          });
+        });
+    }
   };
 
   updateCurrentActivePage = (index) => {
@@ -49,8 +82,9 @@ class Home extends React.Component {
     return (
       <>
         <Hero />
+        <FeedNav activeTab={this.state.activeTab} removeTab={this.removeTab} />
         <Posts articles={this.state.articles} />
-        <Tags />
+        <Tags addTab={this.addTab} />
         <Pagination
           totalArticles={this.state.totalArticles}
           articlesPerPage={this.state.articlesPerPage}
