@@ -1,0 +1,26 @@
+.post-section {
+  border: 1px solid black;
+  width: 50%;
+  margin: 20px;
+}
+
+.post-section img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin: 10px;
+}
+
+.post-section .post-text {
+  margin-left: 50px;
+}
+
+.post-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=post.css.map */

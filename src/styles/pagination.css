@@ -1,0 +1,34 @@
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 50px 0;
+}
+
+.pagination p {
+  font-size: 22px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.pagination span {
+  color: #5cb85c;
+  background: white;
+  border: 1px solid #5cb85c;
+  padding: 10px;
+  margin: 0 3px;
+  cursor: pointer;
+}
+
+.pagination .activeCount {
+  padding: 10px;
+  background: #5cb85c;
+  color: white;
+}
+/*# sourceMappingURL=pagination.css.map */

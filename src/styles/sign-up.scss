@@ -1,0 +1,35 @@
+.signUp-form {
+  text-align: center;
+
+  h1 {
+    font-size: 32px;
+    margin: 20px 0;
+  }
+
+  a {
+    color: #5cb85c;
+  }
+
+  .sign-up-error-span {
+    color: red;
+  }
+}
+
+form {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  input {
+    padding: 10px 20px;
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+  }
+  .submit-button {
+    background: #5cb85c;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+}

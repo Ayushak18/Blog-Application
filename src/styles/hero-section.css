@@ -1,0 +1,17 @@
+.hero-section {
+  background: #5cb85c;
+  color: white;
+  padding: 100px 500px;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 50px;
+  margin: 20px 0;
+  font-weight: 900;
+}
+
+.hero-section p {
+  font-size: 22px;
+}
+/*# sourceMappingURL=hero-section.css.map */
