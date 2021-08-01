@@ -8,6 +8,7 @@ class SignUp extends React.Component {
     errors: {
       email: '',
       password: '',
+      username: '',
     },
   };
 
@@ -26,6 +27,14 @@ class SignUp extends React.Component {
             ? 'Password should be 6 character long'
             : '';
         errors.password = passwordError;
+        break;
+      case 'username':
+        let userNameError =
+          event.target.value.length < 6
+            ? 'Username should be 6 character long'
+            : '';
+        errors.username = userNameError;
+        break;
     }
     this.setState({
       [event.target.name]: event.target.value,
@@ -38,7 +47,15 @@ class SignUp extends React.Component {
         <h1>Sign Up Form</h1>
         <a href="/signIn">Already have an account?</a>
         <form>
-          <input type="text" placeholder="Full Name" />
+          <input
+            onChange={this.handleChange}
+            type="text"
+            placeholder="Full Name"
+            name="username"
+          />
+          <span className="sign-up-error-span">
+            {this.state.errors.username}
+          </span>
           <input
             onChange={this.handleChange}
             type="email"

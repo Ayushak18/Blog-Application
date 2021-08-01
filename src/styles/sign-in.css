@@ -10,4 +10,8 @@
   font-size: 32px;
   margin: 20px 0;
 }
+
+.signIn-form .sign-in-error-span {
+  color: red;
+}
 /*# sourceMappingURL=sign-in.css.map */
