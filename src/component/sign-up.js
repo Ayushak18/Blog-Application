@@ -1,10 +1,12 @@
 import '../styles/sign-up.css';
 import React from 'react';
+import { USER_LOGIN } from '../utils/constant';
 
 class SignUp extends React.Component {
   state = {
     email: '',
     password: '',
+    username: '',
     errors: {
       email: '',
       password: '',
@@ -41,17 +43,41 @@ class SignUp extends React.Component {
       errors,
     });
   };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    let { username, email, password } = this.state;
+    fetch(USER_LOGIN, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ user: { username, email, password } }),
+    })
+      .then((res) => {
+        if (!res.ok) {
+          res.json().then(({ errors }) => this.setState({ errors }));
+          throw new Error('Something went wrong');
+        }
+        res.json();
+      })
+      .then(this.setState({ username: '', email: '', password: '' }))
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   render() {
     return (
       <div className="signUp-form">
         <h1>Sign Up Form</h1>
         <a href="/signIn">Already have an account?</a>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input
             onChange={this.handleChange}
             type="text"
-            placeholder="Full Name"
+            placeholder="Username"
             name="username"
+            value={this.state.username}
           />
           <span className="sign-up-error-span">
             {this.state.errors.username}
@@ -61,6 +87,7 @@ class SignUp extends React.Component {
             type="email"
             placeholder="Email"
             name="email"
+            value={this.state.email}
           />
           <span className="sign-up-error-span">{this.state.errors.email}</span>
           <input
@@ -68,6 +95,7 @@ class SignUp extends React.Component {
             type="password"
             name="password"
             placeholder="Password"
+            value={this.state.password}
           />
           <span className="sign-up-error-span">
             {this.state.errors.password}
