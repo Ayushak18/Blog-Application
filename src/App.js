@@ -6,6 +6,7 @@ import Home from './component/home';
 import './App.css';
 import { Switch } from 'react-router-dom';
 import NoMatch from './component/noMatch';
+import SingleArticle from './component/singleArticle';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/signUp">
           <SignUp />
         </Route>
+        <Route path="/articles/:slug" component={SingleArticle}></Route>
         <Route path="*">
           <NoMatch />
         </Route>
