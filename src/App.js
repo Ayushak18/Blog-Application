@@ -1,6 +1,6 @@
 import Header from './component/header';
-import SignIn from './component/sign-up';
-import SignUp from './component/sign-in';
+import SignIn from './component/sign-in';
+import SignUp from './component/sign-up';
 import { Route } from 'react-router';
 import Home from './component/home';
 import './App.css';
