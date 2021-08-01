@@ -1,6 +1,6 @@
 import '../styles/sign-up.css';
 import React from 'react';
-import { USER_LOGIN } from '../utils/constant';
+import { USER_SIGNUP } from '../utils/constant';
 
 class SignUp extends React.Component {
   state = {
@@ -47,7 +47,7 @@ class SignUp extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     let { username, email, password } = this.state;
-    fetch(USER_LOGIN, {
+    fetch(USER_SIGNUP, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
