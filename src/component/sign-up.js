@@ -59,9 +59,12 @@ class SignUp extends React.Component {
           res.json().then(({ errors }) => this.setState({ errors }));
           throw new Error('Something went wrong');
         }
-        res.json();
+        return res.json();
       })
-      .then(this.setState({ username: '', email: '', password: '' }))
+      .then(({ user }) => {
+        this.props.updateUser(user);
+        this.setState({ username: '', email: '', password: '' });
+      })
       .catch((error) => {
         console.log(error);
       });

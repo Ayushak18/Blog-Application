@@ -1,6 +1,7 @@
 import '../styles/sign-in.css';
 import React from 'react';
 import { USER_LOGIN } from '../utils/constant';
+import { withRouter } from 'react-router-dom';
 
 class SignIn extends React.Component {
   state = {
@@ -38,9 +39,13 @@ class SignIn extends React.Component {
           );
           throw new Error('Login is not successful');
         }
-        res.json();
+        return res.json();
       })
-      .then(this.setState({ email: '', password: '' }))
+      .then(({ user }) => {
+        this.props.updateUser(user);
+        this.setState({ email: '', password: '' });
+        this.props.history.push('/');
+      })
       .catch((error) => {
         console.log(error);
       });
@@ -99,4 +104,4 @@ class SignIn extends React.Component {
   }
 }
 
-export default SignIn;
+export default withRouter(SignIn);
