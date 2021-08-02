@@ -15,7 +15,7 @@ function Header(props) {
             </NavLink>
           </li>
 
-          {props.isLoggedIn ? (
+          {props.isLoggedIn && props.user ? (
             <>
               <li>
                 <h1>{props.user.username}</h1>

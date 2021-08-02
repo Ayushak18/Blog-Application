@@ -43,7 +43,6 @@ class SignIn extends React.Component {
       })
       .then(({ user }) => {
         this.props.updateUser(user);
-        this.setState({ email: '', password: '' });
         this.props.history.push('/');
       })
       .catch((error) => {

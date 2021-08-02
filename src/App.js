@@ -8,6 +8,7 @@ import { Switch } from 'react-router-dom';
 import NoMatch from './component/noMatch';
 import SingleArticle from './component/singleArticle';
 import React from 'react';
+import { VERIFY_USER } from './utils/constant';
 
 class App extends React.Component {
   state = {
@@ -15,11 +16,27 @@ class App extends React.Component {
     user: null,
   };
 
+  componentDidMount() {
+    console.log('App Mounted');
+    if (localStorage.app_user) {
+      fetch(VERIFY_USER, {
+        method: 'GET',
+        headers: {
+          authorization: `Token ${localStorage.app_user}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((user) => this.updateUser(user.user));
+    }
+  }
+
   updateUser = (user) => {
     this.setState({
       isLoggedIn: true,
       user: user,
     });
+    console.log(user);
+    localStorage.setItem('app_user', user.token);
   };
   render() {
     return (
