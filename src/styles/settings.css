@@ -1,0 +1,40 @@
+.settings-page {
+  text-align: center;
+}
+
+.settings-page h1 {
+  font-size: 32px;
+  margin: 20px 0;
+}
+
+.settings-page form {
+  width: 50%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.settings-page form input {
+  padding: 10px 20px;
+  display: block;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.settings-page form .submit-button {
+  background: #5cb85c;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.settings-page textarea {
+  text-align: center;
+  padding: 20px;
+}
+/*# sourceMappingURL=settings.css.map */
