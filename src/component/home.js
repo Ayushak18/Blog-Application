@@ -30,7 +30,6 @@ class Home extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.activeTab !== this.state.activeTab) {
-      console.log('Worked');
       this.fetchData(this.state.activeTab);
     }
   }
