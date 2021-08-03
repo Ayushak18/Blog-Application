@@ -50,39 +50,63 @@ class App extends React.Component {
       return (
         <>
           <Header isLoggedIn={this.state.isLoggedIn} user={this.state.user} />
-          <Switch>
-            <Route path="/" exact>
-              <Home />
-            </Route>
-            <Route path="/signIn" exact>
-              <SignIn updateUser={this.updateUser} />
-            </Route>
-            <Route path="/signUp">
-              <SignUp updateUser={this.updateUser} />
-            </Route>
-            <Route path="/articles/:slug" component={SingleArticle}></Route>
-            <Route path="/signUp">
-              <SignUp updateUser={this.updateUser} />
-            </Route>
-            <Route path="/profile">
-              <Profile />
-            </Route>
-            <Route path="/newArticle">
-              <NewArticle />
-            </Route>
-            <Route path="/settings">
-              <Settings />
-            </Route>
-            <Route path="*">
-              <NoMatch />
-            </Route>
-          </Switch>
+          {this.state.isLoggedIn ? (
+            <ProtectedRoutes />
+          ) : (
+            <UnProtectedRoutes updateUser={this.updateUser} />
+          )}
         </>
       );
     } else {
       return <FullPageLoader />;
     }
   }
+}
+
+function ProtectedRoutes() {
+  return (
+    <Switch>
+      <Route path="/" exact>
+        <Home />
+      </Route>
+      <Route path="/articles/:slug" component={SingleArticle}></Route>
+      <Route path="/profile">
+        <Profile />
+      </Route>
+      <Route path="/newArticle">
+        <NewArticle />
+      </Route>
+      <Route path="/settings">
+        <Settings />
+      </Route>
+      <Route path="*">
+        <NoMatch />
+      </Route>
+    </Switch>
+  );
+}
+
+function UnProtectedRoutes(props) {
+  return (
+    <Switch>
+      <Route path="/" exact>
+        <Home />
+      </Route>
+      <Route path="/signIn" exact>
+        <SignIn updateUser={props.updateUser} />
+      </Route>
+      <Route path="/signUp">
+        <SignUp updateUser={props.updateUser} />
+      </Route>
+      <Route path="/articles/:slug" component={SingleArticle}></Route>
+      <Route path="/signUp">
+        <SignUp updateUser={props.updateUser} />
+      </Route>
+      <Route path="*">
+        <NoMatch />
+      </Route>
+    </Switch>
+  );
 }
 
 export default App;

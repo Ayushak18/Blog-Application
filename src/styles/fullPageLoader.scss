@@ -1,5 +1,8 @@
 .full-page-loader {
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .ripple-loader {
     position: relative;
     width: 64px;
