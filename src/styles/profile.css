@@ -12,7 +12,8 @@
   padding: 50px 0;
 }
 
-.profile .profile-user-info h1 {
+.profile .profile-user-info h1,
+.profile .profile-user-info p {
   color: white;
 }
 

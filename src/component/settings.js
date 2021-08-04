@@ -1,5 +1,5 @@
 import '../styles/settings.css';
-import { USER_PROFILE } from '../utils/constant';
+import { USER_PROFILE_UPDATE } from '../utils/constant';
 import { withRouter } from 'react-router-dom';
 
 function Settings(props) {
@@ -14,7 +14,7 @@ function Settings(props) {
         password: event.target.password.value,
       },
     };
-    fetch(USER_PROFILE, {
+    fetch(USER_PROFILE_UPDATE, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

@@ -4,7 +4,8 @@ const TAGS_URL = ROOT_URL + 'tags';
 const USER_SIGNUP = ROOT_URL + 'users';
 const USER_LOGIN = ROOT_URL + 'users/login';
 const VERIFY_USER = ROOT_URL + 'user';
-const USER_PROFILE = ROOT_URL + 'user';
+const USER_PROFILE_UPDATE = ROOT_URL + 'user';
+const USER_PROFILE = ROOT_URL + 'profiles';
 
 export {
   ROOT_URL,
@@ -13,5 +14,6 @@ export {
   USER_SIGNUP,
   USER_LOGIN,
   VERIFY_USER,
+  USER_PROFILE_UPDATE,
   USER_PROFILE,
 };

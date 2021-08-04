@@ -70,9 +70,7 @@ function ProtectedRoutes() {
         <Home />
       </Route>
       <Route path="/articles/:slug" component={SingleArticle}></Route>
-      <Route path="/profile">
-        <Profile />
-      </Route>
+      <Route path="/profile/:username" component={Profile}></Route>
       <Route path="/newArticle">
         <NewArticle />
       </Route>
