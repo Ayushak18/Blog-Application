@@ -1,21 +1,13 @@
-.signUp-form {
+.settings-page {
   text-align: center;
 }
 
-.signUp-form h1 {
+.settings-page h1 {
   font-size: 32px;
   margin: 20px 0;
 }
 
-.signUp-form a {
-  color: #5cb85c;
-}
-
-.signUp-form .sign-up-error-span {
-  color: red;
-}
-
-.signUp-form form {
+.settings-page form {
   width: 50%;
   margin: 0 auto;
   display: -webkit-box;
@@ -27,17 +19,22 @@
           flex-direction: column;
 }
 
-.signUp-form form input {
+.settings-page form input {
   padding: 10px 20px;
   display: block;
   text-align: center;
   margin: 10px 0;
 }
 
-.signUp-form form .submit-button {
+.settings-page form .submit-button {
   background: #5cb85c;
   border: none;
   color: white;
   cursor: pointer;
 }
-/*# sourceMappingURL=sign-up.css.map */
+
+.settings-page textarea {
+  text-align: center;
+  padding: 20px;
+}
+/*# sourceMappingURL=settings.css.map */

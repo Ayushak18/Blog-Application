@@ -1,17 +1,8 @@
-.signUp-form {
+.settings-page {
   text-align: center;
-
   h1 {
     font-size: 32px;
     margin: 20px 0;
-  }
-
-  a {
-    color: #5cb85c;
-  }
-
-  .sign-up-error-span {
-    color: red;
   }
   form {
     width: 50%;
@@ -30,5 +21,10 @@
       color: white;
       cursor: pointer;
     }
+  }
+
+  textarea {
+    text-align: center;
+    padding: 20px;
   }
 }

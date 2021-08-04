@@ -18,7 +18,10 @@ function Header(props) {
           {props.isLoggedIn && props.user ? (
             <>
               <li>
-                <NavLink activeClassName="header-active-link" to="/profile">
+                <NavLink
+                  activeClassName="header-active-link"
+                  to={`/profile/${props.user.username}`}
+                >
                   <h1>{props.user.username}</h1>
                 </NavLink>
               </li>
