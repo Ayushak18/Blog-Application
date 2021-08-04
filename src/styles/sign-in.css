@@ -14,4 +14,30 @@
 .signIn-form .sign-in-error-span {
   color: red;
 }
+
+.signIn-form form {
+  width: 50%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.signIn-form form input {
+  padding: 10px 20px;
+  display: block;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.signIn-form form .submit-button {
+  background: #5cb85c;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
 /*# sourceMappingURL=sign-in.css.map */
