@@ -1,4 +1,8 @@
-.tag-button {
+.tags {
+  width: 40%;
+}
+
+.tags .tag-button {
   background: #5cb85c;
   border: none;
   padding: 10px 15px;

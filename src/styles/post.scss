@@ -1,7 +1,14 @@
 .post-section {
-  border: 1px solid black;
-  width: 50%;
+  h1 {
+    font-size: 22px;
+    a {
+      color: #5cb85c;
+    }
+  }
+  box-shadow: 3px 3px 10px 1px rgb(170, 170, 170);
+
   margin: 20px;
+  padding: 10px 30px 10px 10px;
 
   img {
     width: 50px;
@@ -12,6 +19,20 @@
 
   .post-text {
     margin-left: 50px;
+  }
+}
+
+.post-section:hover {
+  animation-duration: 10s;
+  animation-name: pop-up;
+}
+
+@keyframes pop-up {
+  from {
+    box-shadow: 10px 10px 10px 5px rgb(170, 170, 170);
+  }
+  to {
+    box-shadow: 10px 10px 10px 5px rgb(170, 170, 170);
   }
 }
 

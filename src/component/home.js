@@ -82,8 +82,11 @@ class Home extends React.Component {
       <>
         <Hero />
         <FeedNav activeTab={this.state.activeTab} removeTab={this.removeTab} />
-        <Posts articles={this.state.articles} />
-        <Tags addTab={this.addTab} />
+        {/* <Posts articles={this.state.articles} /> */}
+        <div className="home-flex">
+          <Posts articles={this.state.articles} />
+          <Tags addTab={this.addTab} />
+        </div>
         <Pagination
           totalArticles={this.state.totalArticles}
           articlesPerPage={this.state.articlesPerPage}
