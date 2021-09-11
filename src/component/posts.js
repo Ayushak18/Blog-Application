@@ -5,11 +5,11 @@ import '../styles/posts.css';
 function Posts(props) {
   if (props.articles) {
     return (
-      <>
+      <div className="posts">
         {props.articles.map((article, index) => (
           <Post key={index} article={article} />
         ))}
-      </>
+      </div>
     );
   } else {
     return (

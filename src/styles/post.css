@@ -1,7 +1,16 @@
 .post-section {
-  border: 1px solid black;
-  width: 50%;
+  -webkit-box-shadow: 3px 3px 10px 1px #aaaaaa;
+          box-shadow: 3px 3px 10px 1px #aaaaaa;
   margin: 20px;
+  padding: 10px 30px 10px 10px;
+}
+
+.post-section h1 {
+  font-size: 22px;
+}
+
+.post-section h1 a {
+  color: #5cb85c;
 }
 
 .post-section img {
@@ -13,6 +22,35 @@
 
 .post-section .post-text {
   margin-left: 50px;
+}
+
+.post-section:hover {
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-name: pop-up;
+          animation-name: pop-up;
+}
+
+@-webkit-keyframes pop-up {
+  from {
+    -webkit-box-shadow: 10px 10px 10px 5px #aaaaaa;
+            box-shadow: 10px 10px 10px 5px #aaaaaa;
+  }
+  to {
+    -webkit-box-shadow: 10px 10px 10px 5px #aaaaaa;
+            box-shadow: 10px 10px 10px 5px #aaaaaa;
+  }
+}
+
+@keyframes pop-up {
+  from {
+    -webkit-box-shadow: 10px 10px 10px 5px #aaaaaa;
+            box-shadow: 10px 10px 10px 5px #aaaaaa;
+  }
+  to {
+    -webkit-box-shadow: 10px 10px 10px 5px #aaaaaa;
+            box-shadow: 10px 10px 10px 5px #aaaaaa;
+  }
 }
 
 .post-flex {

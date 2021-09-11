@@ -21,7 +21,7 @@ class Tags extends React.Component {
   render() {
     if (this.state.tags) {
       return (
-        <>
+        <div className="tags">
           {this.state.tags.map((tag, index) => {
             return (
               <button
@@ -32,7 +32,7 @@ class Tags extends React.Component {
               </button>
             );
           })}
-        </>
+        </div>
       );
     } else {
       return <Loader />;
